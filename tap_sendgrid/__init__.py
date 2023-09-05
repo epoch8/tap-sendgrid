@@ -89,8 +89,7 @@ def sync(ctx):
 
     for c in ctx.selected_catalog:
         selected_fields = set(
-            [k for k, v in c.schema.properties.items()
-             if v.selected or k == c.replication_key])
+            [k for k, v in c.schema.properties.items()])
         fields = desired_fields(selected_fields, c.schema)
 
         schema = Schema(

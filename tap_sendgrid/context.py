@@ -35,11 +35,9 @@ class Context(object):
     def catalog(self, catalog):
         self._catalog = catalog
         self.selected_stream_ids = set(
-            [s.tap_stream_id for s in catalog.streams
-             if s.is_selected()]
+            [s.tap_stream_id for s in catalog.streams]
         )
-        self.selected_catalog = [s for s in catalog.streams
-                                 if s.is_selected()]
+        self.selected_catalog = [s for s in catalog.streams]
 
     def get_bookmark(self, path):
         return bks_.get_bookmark(self.state, *path)
